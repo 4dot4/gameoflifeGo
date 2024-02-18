@@ -17,44 +17,44 @@ func update(grid *[50][50]bool) {
 			friendsCounter := 0
 			if y > 0 {
 				if x > 0 {
-					if grid[y-1][x-1] { //superior esquerda
+					if grid[y-1][x-1] { //top left
 						friendsCounter++
 					}
 				}
-				if grid[y-1][x] { //superior central
+				if grid[y-1][x] { //top middle
 					friendsCounter++
 				}
 				if x < len(grid[y])-1 {
-					if grid[y-1][x+1] { //superior direita
+					if grid[y-1][x+1] { //top right
 						friendsCounter++
 					}
 
 				}
 			}
 			if x > 0 {
-				if grid[y][x-1] { //meia esquerda
+				if grid[y][x-1] { //middle left
 					friendsCounter++
 				}
 
 			}
 			if x < len(grid[y])-1 {
-				if grid[y][x+1] { //meia direita
+				if grid[y][x+1] { //middle right
 					friendsCounter++
 				}
 
 			}
 			if y < len(grid)-1 {
 				if x > 0 {
-					if grid[y+1][x-1] { //baixo esquerda
+					if grid[y+1][x-1] { //down left
 						friendsCounter++
 					}
 
 				}
-				if grid[y+1][x] { //baixo central
+				if grid[y+1][x] { //down middle
 					friendsCounter++
 				}
 				if x < len(grid[y])-1 {
-					if grid[y+1][x+1] { //baixo direita
+					if grid[y+1][x+1] { //down right
 						friendsCounter++
 					}
 				}
@@ -82,7 +82,7 @@ func main() {
 	var grid [50][50]bool
 	rl.InitWindow(800, 800, "Life")
 	rl.SetTargetFPS(60)
-	rl.SetWindowState(rl.FlagWindowResizable)
+	// rl.SetWindowState(rl.FlagWindowResizable)
 	// colors := []rl.Color{rl.Blue, rl.Red, rl.Orange, rl.Green}
 	fpsCounter := 0
 	start := false
@@ -124,12 +124,12 @@ func main() {
 			}
 		}
 		if start {
-			rl.DrawText("Started", 0, 0, 30, rl.Green)
+			rl.DrawText("Started", 0, 0, 30, rl.DarkGreen)
 		} else {
 			rl.DrawText("stoped", 0, 0, 30, rl.Red)
 
 		}
-		rl.DrawFPS(200, 0)
+		// rl.DrawFPS(200, 0)
 		rl.EndDrawing()
 	}
 	rl.CloseWindow()
